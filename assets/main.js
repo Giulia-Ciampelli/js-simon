@@ -64,6 +64,8 @@ if (isNaN(allNum)) {
     alert('Attenzione, scrivi un numero');
 }
 
+// non ha senso perchè i cmapi num permettono solo numeri in partenza
+
 // funzione comparazione di array
 function arrCheck() {
     
