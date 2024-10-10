@@ -26,11 +26,12 @@ let arrCount = 0;
 // altre variabili
 let simonOutput = document.getElementById('simon');
 let formElement = document.querySelector('form');
-let inputOne = document.getElementById('num-1');
-let inputTwo = document.getElementById('num-2');
-let inputThree = document.getElementById('num-3');
-let inputFour = document.getElementById('num-4');
-let inputFive = document.getElementById('num-5');
+let formOne = document.getElementById('num-1');
+let formTwo = document.getElementById('num-2');
+let formThree = document.getElementById('num-3');
+let formFour = document.getElementById('num-4');
+let formFive = document.getElementById('num-5');
+let submit = document.getElementById('button');
 
 // 2. funzione random con ciclo for *5
 function randomNum(min, max) {
@@ -57,6 +58,17 @@ function timer() {
 }
 
 // 4. lettura valori del form e salvataggio nel nuovo array
+const inputOne = formOne.value;
+const inputTwo = formTwo.value;
+const inputThree = formThree.value;
+const inputFour = formFour.value;
+const inputFive = formFive.value;
+
+// evento test
+submit.addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log(inputOne, inputTwo, inputThree, inputFour, inputFive);
+})
 
 // 5.comparazione di array
 // es snack funzione di comparazione delle vocali?
