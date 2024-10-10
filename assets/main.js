@@ -24,7 +24,11 @@ let clock = setInterval(timer, 1000);
 let arrCount = 0;
 
 // altre variabili
+// #region simon output
 let simonOutput = document.getElementById('simon');
+// #endregion simon output
+
+// #region form numeri
 let formElement = document.querySelector('form');
 let formOne = document.getElementById('num-1');
 let formTwo = document.getElementById('num-2');
@@ -32,13 +36,18 @@ let formThree = document.getElementById('num-3');
 let formFour = document.getElementById('num-4');
 let formFive = document.getElementById('num-5');
 let checkButton = document.getElementById('button');
+// #endregion form numeri
+
+// #region output di verifica
+let countOutput = document.getElementById('num-count');
+let numCheckOutput = document.getElementById('num-found');
+// #endregion output di verifica
 
 // 2. funzione random con ciclo for *5
 function randomNum(min, max) {
     for (let i = 0; i < 5; i++) {
         arrSimon.push(Math.floor(Math.random() * (max - min)) + min);
     }
-    console.log(arrSimon);
     simonOutput.innerHTML = arrSimon;
 }
 randomNum(1, 10);
@@ -55,13 +64,11 @@ function timer() {
         num.innerHTML = seconds;
         seconds--;
     }
-
-    // come interromperlo finchè non finisce tutto il resto?
 }
 
 // 4. lettura valori del form e salvataggio nel nuovo array
 // evento test
-checkButton.addEventListener('click', function(e) {
+checkButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     // lettura valori del form
@@ -71,13 +78,11 @@ checkButton.addEventListener('click', function(e) {
     const inputFour = formFour.value;
     const inputFive = formFive.value;
 
-    // come evitare di farla ripartire subito?
     console.log(inputOne, inputTwo, inputThree, inputFour, inputFive);
     arrCheck();
 })
 
 // 5.comparazione di array
-// es snack funzione di comparazione delle vocali?
 function arrCheck() {
     for (let i = 0; i < arrSimon.length; i++) {
         if (arrSimon.includes(userCheck[i])) {
@@ -86,4 +91,8 @@ function arrCheck() {
         }
     }
     console.log(`${arrCount}, ${userCheck}`);
+    countOutput.innerHTML = arrCount;
+    numCheckOutput.innerHTML = userCheck;
 }
+
+// perchè il check non funziona a dovere?
