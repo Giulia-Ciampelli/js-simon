@@ -57,6 +57,13 @@ function timer() {
     }
 }
 
+// *BONUS* verifica input
+const allNum = formOne.value + formTwo.value + formThree.value + formFour.value + formFive.value;
+
+if (isNaN(allNum)) {
+    alert('Attenzione, scrivi un numero');
+}
+
 // funzione comparazione di array
 function arrCheck() {
     
@@ -84,5 +91,3 @@ checkButton.addEventListener('click', function (e) {
     e.preventDefault();
     arrCheck();
 })
-
-// *BONUS* verifica input
