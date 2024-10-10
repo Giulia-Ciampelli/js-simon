@@ -12,6 +12,7 @@ console.log('im alive');
 
 // 1. funzione random con ciclo for *5
 function randomNum(min, max) {
+    let arrSimon = [];
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -20,6 +21,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 // 2. creazione di array?
+let arrUser = [];
 
 // 3. funzione setInterval per timer di 30 secondi
 
