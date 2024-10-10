@@ -18,8 +18,8 @@ let arrUser = [];
 function randomNum(min, max) {
     for (let i = 0; i < 5; i++) {
         arrSimon.push(Math.floor(Math.random() * (max - min)) + min);
-        console.log(arrSimon);
     }
+    console.log(arrSimon);
 }
 
 randomNum(1, 10);
