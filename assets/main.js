@@ -22,6 +22,7 @@ let clock = setInterval(timer, 1000);
 
 // altre variabili
 let simonOutput = document.getElementById('simon');
+let formElement = document.querySelector('form');
 
 // 2. funzione random con ciclo for *5
 function randomNum(min, max) {
@@ -39,7 +40,9 @@ function timer() {
         num.innerHTML = 'Tempo scaduto!';
         clearInterval(clock);
         // blocca visione dei numeri
+        simonOutput.classList.add('d-none');
         // sblocca visione del form
+        formElement.classList.remove('d-none');
     }
     else {
         num.innerHTML = seconds;
