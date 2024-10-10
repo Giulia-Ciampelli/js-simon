@@ -9,3 +9,20 @@ console.log('im alive');
 // BONUS:
 // Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo in qualche modo.
 // Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.
+
+// 1. funzione random con ciclo for *5
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log(randomNum(1, 10));
+}
+
+// 2. creazione di array?
+
+// 3. funzione setInterval per timer di 30 secondi
+
+// 4. appare form di input (da scrivere nell'index)
+
+// 5.comparazione di array
