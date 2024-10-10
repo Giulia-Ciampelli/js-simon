@@ -63,8 +63,6 @@ checkButton.addEventListener('click', function (e) {
     arrCheck();
 })
 
-console.log(`arrSimon: ${arrSimon}, userCheck: ${userCheck}`);
-
 // 5.comparazione di array
 function arrCheck() {
     userCheck = [
@@ -81,7 +79,6 @@ function arrCheck() {
             numFound.push(userCheck[i]);
         }
     }
-    console.log(`${arrCount}, ${numFound}`);
     countOutput.innerHTML = arrCount;
     numCheckOutput.innerHTML = numFound;
 }
