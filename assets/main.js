@@ -71,15 +71,17 @@ checkButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     // lettura valori del form
-    const inputOne = formOne.value;
-    const inputTwo = formTwo.value;
-    const inputThree = formThree.value;
-    const inputFour = formFour.value;
-    const inputFive = formFive.value;
+    const inputOne = Number(formOne.value);
+    const inputTwo = Number(formTwo.value);
+    const inputThree = Number(formThree.value);
+    const inputFour = Number(formFour.value);
+    const inputFive = Number(formFive.value);
 
-    console.log(inputOne, inputTwo, inputThree, inputFour, inputFive);
     arrCheck();
+    console.log(inputOne, inputTwo, inputThree, inputFour, inputFive);
 })
+
+console.log(`arrSimon: ${arrSimon}, userCheck: ${userCheck}`);
 
 // 5.comparazione di array
 function arrCheck() {
@@ -91,10 +93,10 @@ function arrCheck() {
         Number(formFive.value)
     ];
 
-    for (let i = 0; i < arrSimon.length; i++) {
-        if (arrSimon.includes(userCheck[i])) {
+    for (let i = 0; i < userCheck.length; i++) {
+        if (arrSimon.includes(Number(userCheck[i]))) {
             arrCount++;
-            numFound.push(arrSimon[i]);
+            numFound.push(userCheck[i]);
         }
     }
     console.log(`${arrCount}, ${numFound}`);
