@@ -55,6 +55,8 @@ function timer() {
         num.innerHTML = seconds;
         seconds--;
     }
+
+    // come interromperlo finchè non finisce tutto il resto?
 }
 
 // 4. lettura valori del form e salvataggio nel nuovo array
@@ -69,12 +71,17 @@ checkButton.addEventListener('click', function() {
 
     // come evitare di farla ripartire subito?
     console.log(inputOne, inputTwo, inputThree, inputFour, inputFive);
+    arrCheck();
 })
 
 // 5.comparazione di array
 // es snack funzione di comparazione delle vocali?
 function arrCheck() {
     for (let i = 0; i < arrSimon.length; i++) {
-
+        if (arrSimon.includes(userCheck[i])) {
+            count++;
+            userCheck.push(userCheck[i]);
+        }
     }
+    console.log(`${arrCount}, ${userCheck}`);
 }
