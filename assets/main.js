@@ -57,18 +57,8 @@ function timer() {
     }
 }
 
-// *BONUS* verifica input
-const allNum = formOne.value + formTwo.value + formThree.value + formFour.value + formFive.value;
-
-if (isNaN(allNum)) {
-    alert('Attenzione, scrivi un numero');
-}
-
-// non ha senso perchè i cmapi num permettono solo numeri in partenza
-
 // funzione comparazione di array
 function arrCheck() {
-    
     // lettura valori del form e salvataggio nel nuovo array
     userCheck = [
         Number(formOne.value),
@@ -77,6 +67,12 @@ function arrCheck() {
         Number(formFour.value),
         Number(formFive.value)
     ];
+    
+    // verifica input
+    if (isNaN(userCheck)) {
+        alert('Attenzione, scrivi un numero');
+        return;
+    }
 
     for (let i = 0; i < userCheck.length; i++) {
         if (arrSimon.includes(Number(userCheck[i]))) {
@@ -87,6 +83,7 @@ function arrCheck() {
     countOutput.innerHTML = arrCount;
     numCheckOutput.innerHTML = numFound;
 }
+
 
 // evento bottone
 checkButton.addEventListener('click', function (e) {
