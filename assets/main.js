@@ -34,7 +34,7 @@ let countOutput = document.getElementById('num-count');
 let numCheckOutput = document.getElementById('num-found');
 // #endregion output di verifica
 
-// 2. funzione random con ciclo for *5
+// funzione random con ciclo for *5
 function randomNum(min, max) {
     for (let i = 0; i < 5; i++) {
         arrSimon.push(Math.floor(Math.random() * (max - min)) + min);
@@ -43,7 +43,7 @@ function randomNum(min, max) {
 }
 randomNum(1, 10);
 
-// 3. funzione setInterval per timer di 30 secondi
+// funzione setInterval per timer di 30 secondi
 function timer() {
     if (seconds == 0) {
         num.innerHTML = 'Tempo scaduto!';
@@ -57,14 +57,10 @@ function timer() {
     }
 }
 
-// 4. lettura valori del form e salvataggio nel nuovo array
-checkButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    arrCheck();
-})
-
-// 5.comparazione di array
+// funzione comparazione di array
 function arrCheck() {
+    
+    // lettura valori del form e salvataggio nel nuovo array
     userCheck = [
         Number(formOne.value),
         Number(formTwo.value),
@@ -82,3 +78,11 @@ function arrCheck() {
     countOutput.innerHTML = arrCount;
     numCheckOutput.innerHTML = numFound;
 }
+
+// evento bottone
+checkButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    arrCheck();
+})
+
+// *BONUS* verifica input
