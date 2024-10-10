@@ -61,7 +61,9 @@ function timer() {
 
 // 4. lettura valori del form e salvataggio nel nuovo array
 // evento test
-checkButton.addEventListener('click', function() {
+checkButton.addEventListener('click', function(e) {
+    e.preventDefault();
+
     // lettura valori del form
     const inputOne = formOne.value;
     const inputTwo = formTwo.value;
@@ -79,7 +81,7 @@ checkButton.addEventListener('click', function() {
 function arrCheck() {
     for (let i = 0; i < arrSimon.length; i++) {
         if (arrSimon.includes(userCheck[i])) {
-            count++;
+            arrCount++;
             userCheck.push(userCheck[i]);
         }
     }
