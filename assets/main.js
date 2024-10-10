@@ -69,7 +69,7 @@ function arrCheck() {
     ];
     
     // verifica input
-    if (isNaN(userCheck)) {
+    if (userCheck.some(num => isNaN(num))) {
         alert('Attenzione, scrivi un numero');
         return;
     }
