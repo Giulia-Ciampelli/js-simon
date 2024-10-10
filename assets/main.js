@@ -13,16 +13,24 @@ console.log('im alive');
 // 1. creazione di variabili
 // array di confronto
 let arrSimon = [];
-let arrUser = [];
+let userCheck = [];
 
 // variabili per il timer
 let num = document.getElementById('timer');
 let seconds = 30;
 let clock = setInterval(timer, 1000);
 
+// variabili per comparazione array
+let arrCount = 0;
+
 // altre variabili
 let simonOutput = document.getElementById('simon');
 let formElement = document.querySelector('form');
+let inputOne = document.getElementById('num-1');
+let inputTwo = document.getElementById('num-2');
+let inputThree = document.getElementById('num-3');
+let inputFour = document.getElementById('num-4');
+let inputFive = document.getElementById('num-5');
 
 // 2. funzione random con ciclo for *5
 function randomNum(min, max) {
@@ -39,9 +47,7 @@ function timer() {
     if (seconds == 0) {
         num.innerHTML = 'Tempo scaduto!';
         clearInterval(clock);
-        // blocca visione dei numeri
         simonOutput.classList.add('d-none');
-        // sblocca visione del form
         formElement.classList.remove('d-none');
     }
     else {
@@ -50,6 +56,12 @@ function timer() {
     }
 }
 
-// 4. appare form di input (da scrivere nell'index)
+// 4. lettura valori del form e salvataggio nel nuovo array
 
 // 5.comparazione di array
+// es snack funzione di comparazione delle vocali?
+function arrCheck() {
+    for (let i = 0; i < arrSimon.length; i++) {
+
+    }
+}
