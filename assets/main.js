@@ -31,7 +31,7 @@ let formTwo = document.getElementById('num-2');
 let formThree = document.getElementById('num-3');
 let formFour = document.getElementById('num-4');
 let formFive = document.getElementById('num-5');
-let submit = document.getElementById('button');
+let checkButton = document.getElementById('button');
 
 // 2. funzione random con ciclo for *5
 function randomNum(min, max) {
@@ -58,15 +58,16 @@ function timer() {
 }
 
 // 4. lettura valori del form e salvataggio nel nuovo array
-const inputOne = formOne.value;
-const inputTwo = formTwo.value;
-const inputThree = formThree.value;
-const inputFour = formFour.value;
-const inputFive = formFive.value;
-
 // evento test
-submit.addEventListener('submit', function(e) {
-    e.preventDefault();
+checkButton.addEventListener('click', function() {
+    // lettura valori del form
+    const inputOne = formOne.value;
+    const inputTwo = formTwo.value;
+    const inputThree = formThree.value;
+    const inputFour = formFour.value;
+    const inputFive = formFive.value;
+
+    // come evitare di farla ripartire subito?
     console.log(inputOne, inputTwo, inputThree, inputFour, inputFive);
 })
 
