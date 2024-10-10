@@ -10,9 +10,18 @@ console.log('im alive');
 // Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo in qualche modo.
 // Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.
 
-// 1. creazione di array
+// 1. creazione di variabili
+// array di confronto
 let arrSimon = [];
 let arrUser = [];
+
+// variabili per il timer
+let num = document.getElementById('timer');
+let seconds = 30;
+let clock = setInterval(timer, 1000);
+
+// altre variabili
+let simonOutput = document.getElementById('simon');
 
 // 2. funzione random con ciclo for *5
 function randomNum(min, max) {
@@ -20,11 +29,23 @@ function randomNum(min, max) {
         arrSimon.push(Math.floor(Math.random() * (max - min)) + min);
     }
     console.log(arrSimon);
+    simonOutput.innerHTML = arrSimon;
 }
-
 randomNum(1, 10);
 
 // 3. funzione setInterval per timer di 30 secondi
+function timer() {
+    if (seconds == 0) {
+        num.innerHTML = 'Tempo scaduto!';
+        clearInterval(clock);
+        // blocca visione dei numeri
+        // sblocca visione del form
+    }
+    else {
+        num.innerHTML = seconds;
+        seconds--;
+    }
+}
 
 // 4. appare form di input (da scrivere nell'index)
 
