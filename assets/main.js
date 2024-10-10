@@ -94,7 +94,7 @@ function arrCheck() {
     for (let i = 0; i < arrSimon.length; i++) {
         if (arrSimon.includes(userCheck[i])) {
             arrCount++;
-            numFound.push(numFound[i]);
+            numFound.push(arrSimon[i]);
         }
     }
     console.log(`${arrCount}, ${numFound}`);
