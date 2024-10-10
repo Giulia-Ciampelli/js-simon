@@ -11,16 +11,15 @@ console.log('im alive');
 // Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.
 
 // 1. creazione di variabili
-// array di confronto
-let arrSimon = [];
-let userCheck = [];
-
 // variabili per il timer
 let num = document.getElementById('timer');
 let seconds = 30;
 let clock = setInterval(timer, 1000);
 
 // variabili per comparazione array
+let arrSimon = [];
+let userCheck = [];
+let numFound = [];
 let arrCount = 0;
 
 // altre variabili
@@ -84,15 +83,23 @@ checkButton.addEventListener('click', function (e) {
 
 // 5.comparazione di array
 function arrCheck() {
+    userCheck = [
+        Number(formOne.value),
+        Number(formTwo.value),
+        Number(formThree.value),
+        Number(formFour.value),
+        Number(formFive.value)
+    ];
+
     for (let i = 0; i < arrSimon.length; i++) {
         if (arrSimon.includes(userCheck[i])) {
             arrCount++;
-            userCheck.push(userCheck[i]);
+            numFound.push(numFound[i]);
         }
     }
-    console.log(`${arrCount}, ${userCheck}`);
+    console.log(`${arrCount}, ${numFound}`);
     countOutput.innerHTML = arrCount;
-    numCheckOutput.innerHTML = userCheck;
+    numCheckOutput.innerHTML = numFound;
 }
 
 // perchè il check non funziona a dovere?
