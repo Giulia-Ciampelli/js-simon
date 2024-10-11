@@ -1,7 +1,7 @@
 // BONUS:
-// Inseriamo la validazione: se l'utente mette due numeri uguali lo blocchiamo in qualche modo.
+// Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo in qualche modo.
+// Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.
 
-// 1. creazione di variabili
 // variabili per il timer
 let num = document.getElementById('timer');
 let seconds = 30;
@@ -67,15 +67,8 @@ function arrCheck() {
         Number(formFour.value),
         Number(formFive.value)
     ];
-    
-    // *BONUS* verifica input
-    if (userCheck.some(num => isNaN(num))) {
-        alert('Attenzione, scrivi un numero');
-        return;
-    }
 
     for (let i = 0; i < userCheck.length; i++) {
-        
         if (arrSimon.includes(Number(userCheck[i]))) {
             arrCount++;
             numFound.push(userCheck[i]);
@@ -90,3 +83,5 @@ checkButton.addEventListener('click', function (e) {
     e.preventDefault();
     arrCheck();
 })
+
+// *BONUS* verifica input
