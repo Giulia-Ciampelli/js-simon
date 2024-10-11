@@ -68,7 +68,7 @@ function arrCheck() {
         Number(formFive.value)
     ];
     
-    // verifica input
+    // *BONUS* verifica input
     if (userCheck.some(num => isNaN(num))) {
         alert('Attenzione, scrivi un numero');
         return;
@@ -83,7 +83,6 @@ function arrCheck() {
     countOutput.innerHTML = arrCount;
     numCheckOutput.innerHTML = numFound;
 }
-
 
 // evento bottone
 checkButton.addEventListener('click', function (e) {
