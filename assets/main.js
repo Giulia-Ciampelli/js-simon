@@ -1,6 +1,5 @@
 // BONUS:
-// Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo in qualche modo.
-// Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.
+// Inseriamo la validazione: se l'utente mette due numeri uguali lo blocchiamo in qualche modo.
 
 // 1. creazione di variabili
 // variabili per il timer
@@ -59,6 +58,7 @@ function timer() {
 
 // funzione comparazione di array
 function arrCheck() {
+    
     // lettura valori del form e salvataggio nel nuovo array
     userCheck = [
         Number(formOne.value),
@@ -75,6 +75,7 @@ function arrCheck() {
     }
 
     for (let i = 0; i < userCheck.length; i++) {
+        
         if (arrSimon.includes(Number(userCheck[i]))) {
             arrCount++;
             numFound.push(userCheck[i]);
