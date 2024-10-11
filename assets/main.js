@@ -39,7 +39,7 @@ function randomNum(min, max) {
     for (let i = 0; i < 5; i++) {
         arrSimon.push(Math.floor(Math.random() * (max - min)) + min);
     }
-    simonOutput.innerHTML = arrSimon;
+    simonOutput.innerHTML = arrSimon.join(' ');
 }
 randomNum(1, 10);
 
@@ -81,7 +81,7 @@ function arrCheck() {
         }
     }
     countOutput.innerHTML = arrCount;
-    numCheckOutput.innerHTML = numFound;
+    numCheckOutput.innerHTML = numFound.join(' ');
 }
 
 // evento bottone
